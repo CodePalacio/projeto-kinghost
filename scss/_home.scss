@@ -1,0 +1,292 @@
+.principal{
+    margin-top: 11.9rem;
+    background-color: $roxo;
+    height: 100%;
+    width: 100%;
+    position: static; 
+    .container{
+        display: flex;
+        justify-content: space-between;
+        
+ 
+        .texto{
+            margin-top: 3.9rem;
+            h1{
+                @include titulo-principal;
+                margin-bottom: 1.6rem;
+            }
+            p{
+                color: $branco;
+                max-width: 48.5rem;
+                font-weight: 400;
+                font-size: 1.8rem;
+                line-height: 150%;
+            }
+            .button-primary{
+                @include estilo-botao (5.4rem, $amarelo, $roxo);
+                border: solid 1px $amarelo;
+                margin-top: 3.2rem;
+            }
+            .conheca{
+                display: flex;
+                margin-top: 8.6rem;
+                align-items: center;
+                .icon{
+                    background-color: #7B5ABA80;
+                    border-radius: 6px;
+                    padding: 6px 8px;
+                    cursor: pointer;
+                    transition: background-color .3s;
+                    &:hover{
+                        background-color: #7B5ABA;
+                    }
+                }
+                span{
+                    color: $branco;
+                    font-weight: 700;
+                    font-size: 1.6rem;
+                    line-height: 19px;
+                    margin-left: 1.6rem;
+                }
+            }
+        }
+        .imagem{
+            position: relative;
+            top: 3.4rem;
+        }
+        
+
+    }
+
+    @include responsive (1280px){
+        .container{
+            .texto{
+                max-width: 48rem;
+                .conheca{
+                    margin-top: 2.5rem;
+                }
+            }
+            .imagem{
+                max-width: 60rem;
+                
+            
+            }
+        }
+        
+    }
+
+    @include responsive (991px){
+        
+        .container{
+            
+            @include flex(center,center ,column);
+            .texto{
+                @include flex(center, center, column);
+                h1{
+                    
+                    line-height: 120%;
+                    text-align: center;
+                }
+                p{
+                    
+                    line-height: 150%;
+                    text-align: center;
+                }
+                .conheca{
+                    margin-top: 5rem;
+                }
+            }
+            .imagem{
+                max-width: 50rem;
+                left: -3rem;
+            }
+        }
+    }
+
+    @include responsive (480px){
+        margin-top: 8rem;
+        
+        .container{
+            width: 100%;
+            .texto{
+                max-width: 310px;
+                margin-top: 3rem;
+                h1{
+                    font-size: 3.8rem;
+                }
+            }
+            .imagem{
+                top: 2rem;
+            }
+        }
+    }
+}
+
+.cards{
+    padding-bottom: 9.9rem;
+    .container{
+        
+        .titulo-section-cards{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 14.9rem;
+            h2{
+                color: $cinza-escuro;
+                font-weight: bold;
+                font-size: 32px;
+                line-height: 130%;
+                font-family: 'Pt Sans', sans-serif;
+                max-width: 50.2rem;
+            }
+            p{
+                color: $cinza-texto;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 165%;
+                margin-right: 3rem;
+            }
+        }
+        .all-cards{
+            display: flex;
+            .primeiro-card{
+                width: 100%;
+                max-width: 28rem;
+                height: 32.3rem;
+                background-color: rgba(197, 190, 220, .1);
+                border-radius: 12px;
+                margin-top: 5.2rem;
+                padding-left: 4.2rem;
+                margin-right: 5.4rem;
+                @include flex(start, space-around, column);
+                .icon-alcance{
+                    margin-top: 4.1rem;
+                    background-color:$branco;
+                    width: 64px;
+                    height: 64px;
+                    display: flex;
+                    justify-content: center;
+                    border-radius:12px;
+                    margin-bottom: 2.8rem;
+                    img{
+                        max-width:32px;
+                    }
+                }
+                .texto-primeiroCard{
+                    margin-bottom: 6.8rem;
+                    
+                    h3{
+                        margin-bottom: 2rem;
+                        color: $roxo;
+                        font-weight: bold;
+                        font-size: 1.8rem;
+                        line-height: 2.2rem;
+                    }
+                    p{
+                        color: $cinza-texto;
+                        font-weight: 400;
+                        font-size: 1.6rem;
+                        line-height: 165%;
+                        width: 20.4rem;
+                    }
+                    
+                }
+            }
+    
+            .tres-cards{
+                
+                .row{
+                    display: flex;
+                    border-bottom:  solid 2px rgba(197,190,220,1);
+                    
+                    max-width:98rem;
+                    
+                    .primeiro-card{     
+                        background-color: $branco;
+                        
+                        .cinza{
+                            background-color:rgba(197, 190, 220, .1);
+                        }
+                        .texto-primeiroCard{
+                            p{
+                                width: 239px;
+                            }
+                        }
+                    }
+                }
+             }
+              
+               
+        }
+        
+        @include responsive (991px){
+            .titulo-section-cards{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                h2{
+                    
+                    line-height: 130%;
+                    margin-bottom: 1.8rem;
+                }
+            }
+            .all-cards{
+                flex-direction: column;
+                align-items: center;
+                .tres-cards{
+                    .row{
+                        flex-direction: column;
+                        border-bottom: none;
+                    }
+                    
+                }
+            }
+        }
+        @include responsive (480px){
+            .all-cards{
+                justify-content: center;
+                .primeiro-card{
+                    max-width: 100%;
+                    height: auto;
+                    padding: 3rem;
+                    margin-right: 0;
+                    border-radius: 0px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: start;
+                    .texto-primeiroCard{
+                        max-width:100%;
+                        margin-top: 4.5rem;
+                       
+                    }
+                    
+                }
+                .tres-cards{
+                    .primeiro-card{
+                        max-width: 100%;
+                        height: auto;
+                        
+                        .gaste-menos,
+                        .autonomia,
+                        .templates{
+                            display: flex;
+                            align-items:start;
+                            
+                            .texto-primeiroCard{
+                                margin-left: 4.8rem;
+                                
+                                display: flex;
+                                flex-direction: column;
+                                p{
+                                    max-width: 20.5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    
+}

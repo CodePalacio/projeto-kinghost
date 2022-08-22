@@ -1,0 +1,53 @@
+header{
+    background-color: $roxo;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 11.9rem;
+    width: 100%;
+    display: flex;
+    z-index: 10;
+    .container{
+        @include flex(center, space-between, row);
+    }
+
+    nav{
+        ul{
+            display: flex;
+ 
+            li{
+                &:not(:first-child){
+                    margin-left: 56px;
+                }
+                 
+                a{
+                    display: flex;
+                    align-items: center;
+                    
+                    span{
+                        color: $branco-texto;
+                        line-height: 19px;
+                        margin-left: 14px;
+                    }
+                }   
+                
+            }
+        }
+    }
+
+    @include responsive(600px){
+        nav{
+            display: none;
+        }
+        .container{
+            justify-content: center;
+        }
+    }
+
+    @include responsive(480px){
+        height: 80px;
+        .logo{
+            max-width: 140px;
+        }
+    }
+}

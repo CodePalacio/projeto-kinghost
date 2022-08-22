@@ -1,0 +1,39 @@
+@mixin responsive ($ScreenWidth){
+    @media(max-width:$ScreenWidth){
+        @content;
+    }
+}
+
+@mixin flex ($align, $justify, $direction){
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+@mixin estilo-botao ($altura, $fundo, $corTexto){
+    display: inline-block;
+    height: $altura;
+    border-radius: 6px;
+    padding: 0 5rem;
+    line-height: 5rem;
+    font-weight: bold;
+    font-size: 1.6rem;
+    background-color: $fundo;
+    color: $corTexto;
+    transition: all .3s;
+    cursor: pointer;
+    &:hover{
+        background-color: $corTexto;
+        color: $fundo;
+    }
+}
+
+@mixin titulo-principal{
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 700;
+    font-size: 4.8rem;
+    line-height: 120%;
+    color: $branco;
+    max-width: 55rem;
+}
